@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+    android:id="@+id/nav_display_books"
+    android:icon="@drawable/ic_baseline_menu_book"
+    android:title="Liste des Livres"
+    >
+    </item>
+    <item
+        android:id="@+id/nav_favorite_books"
+        android:icon="@drawable/ic_baseline_favorite"
+        android:title="Liste des Favoris"
+        >
+    </item>
+</menu>
