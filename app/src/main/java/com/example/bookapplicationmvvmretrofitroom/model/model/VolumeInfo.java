@@ -35,12 +35,15 @@ public class VolumeInfo implements Serializable {
         public String canonicalVolumeLink;
         public String subtitle;
         public String publisher;
+        private boolean isFavorite;
+
+    //private String documentId;
 
         //public PanelizationSummary panelizationSummary;
 
         public ArrayList<String> categories;
 
-    public VolumeInfo(String title, ArrayList<String> authors, String publishedDate, int pageCount, String printType, String maturityRating,ImageLinks imageLinks, boolean allowAnonLogging, String contentVersion, String language, String previewLink, String infoLink, String canonicalVolumeLink, String subtitle, String description, String publisher, ArrayList<String> categories) {
+    public VolumeInfo(String title, ArrayList<String> authors, String publishedDate, int pageCount, String printType, String maturityRating,ImageLinks imageLinks, boolean allowAnonLogging, String contentVersion, String language, String previewLink, String infoLink, String canonicalVolumeLink, String subtitle, String description, String publisher, ArrayList<String> categories, boolean isFavorite) {
         this.title = title;
         this.authors = authors;
         this.publishedDate = publishedDate;
@@ -58,7 +61,9 @@ public class VolumeInfo implements Serializable {
         this.publisher = publisher;
         this.categories = categories;
         this.imageLinks = imageLinks;
+        this.isFavorite =isFavorite;
     }
+ public VolumeInfo(){}
 
     public String getTitle() {
         return title;
@@ -84,6 +89,20 @@ public class VolumeInfo implements Serializable {
         this.publishedDate = publishedDate;
     }
 
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
+    }
+/* public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }*/
 
     public int getPageCount() {
         return pageCount;
@@ -204,4 +223,7 @@ public class VolumeInfo implements Serializable {
     public void setImageLinks(ImageLinks imageLinks) {
         this.imageLinks = imageLinks;
     }
+
+
+
 }

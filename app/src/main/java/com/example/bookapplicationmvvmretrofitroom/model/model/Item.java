@@ -9,8 +9,30 @@ import java.io.Serializable;
 public class Item implements Serializable {
         @PrimaryKey(autoGenerate = true)
         public long identifier;
+        public String id;
         @ColumnInfo(name = "volumeInfo")
         public VolumeInfo volumeInfo;
+        private String documentId;
+
+
+    public Item() {
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getDocumentId() {
+        return documentId;
+    }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
 
     public Item(VolumeInfo volumeInfo) {
         this.volumeInfo = volumeInfo;
@@ -31,5 +53,6 @@ public class Item implements Serializable {
     public void setIdentifier(long identifier) {
         this.identifier = identifier;
     }
+
 
 }

@@ -14,9 +14,9 @@ import java.util.List;
 public class LoginActivityViewModel extends ViewModel {
 
 
-    public LiveData<List<Item>> getBeginingListfavoriteLiveData (Context context){
+    /*public LiveData<List<Item>> getBeginingListfavoriteLiveData (Context context){
         return RepositoryBook.getInstance().getFavoriteBooks(context);
-    }
+    }*/
 
 
 }

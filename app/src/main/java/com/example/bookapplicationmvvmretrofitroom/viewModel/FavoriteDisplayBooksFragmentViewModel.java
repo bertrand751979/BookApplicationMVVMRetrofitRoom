@@ -13,20 +13,14 @@ import com.example.bookapplicationmvvmretrofitroom.repository.RepositoryBook;
 import java.util.List;
 
 public class FavoriteDisplayBooksFragmentViewModel extends ViewModel {
-    //private MutableLiveData<List<Item>>myFavoriteList = new MutableLiveData<>();
-    //public LiveData<List<Item>> favoriteLiveData = myFavoriteList;
+    private MutableLiveData<List<Item>> myFavoriteItemsList = new MutableLiveData<>();
+    public LiveData<List<Item>> itemLiveData = myFavoriteItemsList;
 
-    public  LiveData<List<Item>> getFavoriteList(Context context){
-        return RepositoryBook.getInstance().getFavoriteBooks(context);
-    }
+    /*public void toPostMyFavoriteItemsList(){
+        myFavoriteItemsList.postValue(RepositoryBook.getInstance().getMyBookList());
+    }*/
 
-   // public void toPostFavoriteList(){
-    //    myFavoriteList.postValue(RepositoryBook.getInstance().getMyListfavorite());
-    //}
 
-    public void deleteBookFavorir(Item item, Context context){
-        RepositoryBook.getInstance().deleteFav(item, context);
-    }
 
 
 }

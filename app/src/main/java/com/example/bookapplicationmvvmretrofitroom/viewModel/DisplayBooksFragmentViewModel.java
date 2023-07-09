@@ -27,7 +27,7 @@ public class DisplayBooksFragmentViewModel extends ViewModel {
     }
 
     public void addToFavorite(Item item, Context context){
-        RepositoryBook.getInstance().addFavori(item,context);
+        //RepositoryBook.getInstance().addFavori(item,context);
     }
 
 

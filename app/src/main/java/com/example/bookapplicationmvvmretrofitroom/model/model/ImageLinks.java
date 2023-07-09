@@ -11,6 +11,7 @@ public class ImageLinks implements Serializable {
         this.smallThumbnail = smallThumbnail;
         this.thumbnail = thumbnail;
     }
+    public ImageLinks(){}
 
     public String getSmallThumbnail() {
         return smallThumbnail;

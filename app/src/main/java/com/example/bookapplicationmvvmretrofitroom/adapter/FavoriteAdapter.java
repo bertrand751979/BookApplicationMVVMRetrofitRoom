@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bookapplicationmvvmretrofitroom.OnButtonDeleteActionClicked;
 import com.example.bookapplicationmvvmretrofitroom.R;
 import com.example.bookapplicationmvvmretrofitroom.model.model.Item;
 import com.example.bookapplicationmvvmretrofitroom.viewHolder.FavoriteViewHolder;
@@ -15,27 +16,20 @@ import java.util.ArrayList;
 
 public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteViewHolder> {
 
-    public interface FavoriAdapterInteface {
-        void delete(Item item);
-    }
-
-
     private ArrayList<Item> listFavoriteAdapter = new ArrayList<>();
-    private FavoriAdapterInteface favoriAdapterInteface;
+    private OnButtonDeleteActionClicked onButtonDeleteActionClicked;
 
-   // public FavoriteAdapter() {
-        //this.listFavoriteAdapter = listFavoriteAdapter;
-  //  }
-
-
-    public FavoriteAdapter(FavoriAdapterInteface favoriAdapterInteface) {
-        this.favoriAdapterInteface = favoriAdapterInteface;
+    public FavoriteAdapter(ArrayList<Item> listFavoriteAdapter, OnButtonDeleteActionClicked onButtonDeleteActionClicked) {
+        this.listFavoriteAdapter = listFavoriteAdapter;
+        this.onButtonDeleteActionClicked = onButtonDeleteActionClicked;
     }
 
     public void setListFavoriteAdapter(ArrayList<Item> listFavoriteAdapter) {
         this.listFavoriteAdapter = listFavoriteAdapter;
         notifyDataSetChanged();
     }
+
+
 
     @NonNull
     @Override
@@ -47,7 +41,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull FavoriteViewHolder holder, int position) {
-        holder.bind(listFavoriteAdapter.get(position), favoriAdapterInteface);
+        holder.bind(listFavoriteAdapter.get(position), onButtonDeleteActionClicked);
     }
 
     @Override

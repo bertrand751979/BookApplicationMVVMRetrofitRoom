@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.bookapplicationmvvmretrofitroom.OnButtonDeleteActionClicked;
 import com.example.bookapplicationmvvmretrofitroom.R;
 import com.example.bookapplicationmvvmretrofitroom.adapter.FavoriteAdapter;
 import com.example.bookapplicationmvvmretrofitroom.model.model.Item;
@@ -68,7 +69,8 @@ public class FavoriteViewHolder extends RecyclerView.ViewHolder {
         this.vhBtnDelete = vhBtnDelete;
     }
 
-    public void bind(Item item, FavoriteAdapter.FavoriAdapterInteface favoriAdapterInteface){
+   // public void bind(Item item, FavoriteAdapter.FavoriAdapterInteface favoriAdapterInteface){
+   public void bind(Item item, OnButtonDeleteActionClicked onButtonDeleteActionClicked){
         vhFavoriteBookAuthorName.setText(item.getVolumeInfo().getAuthors().get(0));
         vhFavoritePublishedYear.setText(item.getVolumeInfo().getPublishedDate());
         vhFavoriteBookTitle.setText(item.getVolumeInfo().getTitle());
@@ -83,12 +85,19 @@ public class FavoriteViewHolder extends RecyclerView.ViewHolder {
             vhFavoriteBookPicture.setImageResource(R.drawable.ic_error);
         }
 
-        vhBtnDelete.setOnClickListener(new View.OnClickListener() {
+      /*  vhBtnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                favoriAdapterInteface.delete(item);
+                //favoriAdapterInteface.delete(item);
             }
-        });
+        });*/
+
+       vhBtnDelete.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               onButtonDeleteActionClicked.deleteBook(item);
+           }
+       });
 
 
     }
